@@ -7,7 +7,7 @@ const octokit = new (Octokit.plugin(createPullRequest))({
 });
 
 const versionsJsonFile = 'configs/versions.json';
-const params = {owner: 'danielrozenberg', repo: 'cdn-configuration-not-a-fork'};
+const params = {owner: 'danielrozenberg', repo: 'cdn-configuration'};
 
 // TODO(danielrozenberg): change to @ampproject/release-on-duty after testing is done.
 const releaseOnDuty = '@danielrozenberg';
