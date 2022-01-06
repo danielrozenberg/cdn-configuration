@@ -83,6 +83,7 @@ export async function createVersionsUpdatePullRequest(
   if (!pullRequestResponse || pullRequestResponse.status !== 201) {
     throw new Error('Failed to create a pull request');
   }
+  console.log('Created pull request', `${pullRequestResponse.data.number}`);
 
   return pullRequestResponse;
 }
