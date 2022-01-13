@@ -17,7 +17,7 @@ on:
 
 jobs:
   promote-beta-experimental-traffic:
-    uses: ampproject/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
+    uses: danielrozenberg/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
     with:
       channel-name: 'Beta/Experimental traffic'
       ts-file: 'promote-beta-experimental-traffic.ts'

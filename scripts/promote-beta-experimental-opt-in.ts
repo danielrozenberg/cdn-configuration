@@ -15,6 +15,7 @@ const {amp_version: AMP_VERSION}: Args = minimist(process.argv.slice(2));
 void runPromoteJob(jobName, async () => {
   await createVersionsUpdatePullRequest((currentVersions) => {
     const ampVersion = AMP_VERSION ?? currentVersions.nightly.slice(2);
+    console.dir({AMP_VERSION, currentVersions, ampVersion});
 
     return {
       versionsChanges: {
