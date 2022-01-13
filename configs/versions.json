@@ -1,8 +1,8 @@
 {
-  "beta-opt-in": "030000000000000",
+  "beta-opt-in": "032201999999999",
   "beta-traffic": "030000000000000",
   "control": "020000000000000",
-  "experimental-opt-in": "000000000000000",
+  "experimental-opt-in": "002201999999999",
   "experimental-traffic": "000000000000000",
   "experimentA": null,
   "experimentB": null,
