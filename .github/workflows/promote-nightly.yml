@@ -12,8 +12,8 @@ on:
       auto-merge:
         description: 'Leave this box checked to enable the PR to auto-merge when all checks have passed.'
         required: false
-        default: true
-        type: boolean
+        default: ''
+        type: string
 
 jobs:
   promote-nightly:
