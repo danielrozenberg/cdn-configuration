@@ -14,13 +14,18 @@ on:
         required: false
         default: ''
         type: string
+      auto-merge:
+        description: 'Enable PR auto-marge'
+        required: false
+        type: boolean
 
 jobs:
   promote-beta-experimental-opt-in:
-    uses: ampproject/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
+    uses: danielrozenberg/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
     with:
       channel-name: 'Beta/Experimental opt-in'
       ts-file: 'promote-beta-experimental-opt-in.ts'
       amp-version: ${{ github.event.inputs.amp-version }}
+      auto-merge: ${{ github.event.inputs.auto-merge }}
     secrets:
       access-token: ${{ secrets.ACCESS_TOKEN }}
