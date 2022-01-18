@@ -117,7 +117,7 @@ export async function createVersionsUpdatePullRequest(
         }
       }`,
         {
-          pullRequestId: pullRequestResponse.data.id,
+          pullRequestId: pullRequestResponse.data.node_id,
           mergeMethod: 'SQUASH',
         }
       );
