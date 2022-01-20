@@ -4,8 +4,6 @@ on:
   pull_request:
     types:
       - auto_merge_enabled
-    branches:
-      - promote-job-nightly-2112231523000
     paths:
       - 'configs/versions.json'
 
@@ -14,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: hmarr/auto-approve-action@v2
-        if: github.actor == 'ampprojectbot'
+        if: github.actor == 'ampprojectbot' && startsWith(github.ref_name, 'promote-')
         with:
           github-token: '${{ github.token }}'
