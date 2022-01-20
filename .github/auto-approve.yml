@@ -1,5 +1,3 @@
 rules:
   - title: '.*'
   - author: ampprojectbot
-  - changedFiles:
-      - "^configs/versions\\.json$"
