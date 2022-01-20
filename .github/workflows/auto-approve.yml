@@ -1,12 +1,20 @@
 name: Auto approve
 
-on: pull_request_target
+on:
+  pull_request:
+    types:
+      - auto_merge_enabled
+    branches:
+      - 'promote-*'
+      - 'cherry-pick-*'
+    paths:
+      - 'configs/versions.json'
 
 jobs:
   auto-approve:
     runs-on: ubuntu-latest
     steps:
       - uses: hmarr/auto-approve-action@v2
-        if: github.actor == 'ampprojectbot' && (startsWith(github.ref_name == 'promote-') || startsWith(github.ref_name == 'cherry-pick-'))
+        if: github.actor == 'ampprojectbot'
         with:
           github-token: '${{ github.token }}'
