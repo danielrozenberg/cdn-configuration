@@ -5,7 +5,7 @@ on:
     types:
       - auto_merge_enabled
     branches:
-      - 'promote*'
+      - promote-job-nightly-2112231523000
     paths:
       - 'configs/versions.json'
 
