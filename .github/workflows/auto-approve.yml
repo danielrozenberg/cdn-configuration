@@ -5,7 +5,7 @@ on:
     types:
       - auto_merge_enabled
     branches:
-      - 'promote-*'
+      - promote-*
     paths:
       - 'configs/versions.json'
 
