@@ -4,6 +4,8 @@ on:
   pull_request:
     types:
       - auto_merge_enabled
+    branches:
+      - 'promote-*'
     paths:
       - 'configs/versions.json'
 
