@@ -4,11 +4,6 @@ on:
   pull_request:
     types:
       - auto_merge_enabled
-    branches:
-      - 'promote-*'
-      - 'cherry-pick-*'
-    paths:
-      - 'configs/versions.json'
 
 jobs:
   auto-approve:
