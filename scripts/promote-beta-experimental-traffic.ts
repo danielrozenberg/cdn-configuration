@@ -30,14 +30,14 @@ async function fetchActiveExperiments(
   ampVersion: string
 ): Promise<ExperimentsConfig> {
   const response = await octokit.repos.getContent({
-    owner: 'ampproject',
+    owner: 'danielrozenberg',
     repo: 'amphtml',
     ref: ampVersion,
     path: 'build-system/global-configs/experiments-config.json',
   });
   if (!('content' in response.data)) {
     throw new Error(
-      'Unexpected response when fetching experiments-config.json from ampproject/amphtml'
+      'Unexpected response when fetching experiments-config.json from danielrozenberg/amphtml'
     );
   }
 

@@ -9,9 +9,9 @@ export const octokit = new (Octokit.plugin(createPullRequest))({
 });
 
 const versionsJsonFile = 'configs/versions.json';
-const params = {owner: 'ampproject', repo: 'cdn-configuration'};
+const params = {owner: 'danielrozenberg', repo: 'cdn-configuration'};
 
-// TODO(danielrozenberg): change to @ampproject/release-on-duty after testing is done.
+// TODO(danielrozenberg): change to @danielrozenberg/release-on-duty after testing is done.
 const releaseOnDuty = '@danielrozenberg';
 
 type Awaitable<T> = T | Promise<T>; // https://github.com/microsoft/TypeScript/issues/31394
