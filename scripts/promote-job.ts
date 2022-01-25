@@ -85,7 +85,9 @@ export async function createVersionsUpdatePullRequest(
     changes: [
       {
         files: {
-          [versionsJsonFile]: JSON.stringify(newVersions, undefined, 2) + '\n',
+          [versionsJsonFile]:
+            JSON.stringify(newVersions, undefined, 2).replace(/,\n/g, ',\n\n') +
+            '\n',
         },
         commit: title,
       },
