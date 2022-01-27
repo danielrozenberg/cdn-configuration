@@ -1,0 +1,38 @@
+# Creates an issue on this repository when a build fails.
+
+on:
+  workflow_call:
+    inputs:
+      title:
+        description: 'Title text of the issue ("Workflow failed:" will be prefixed to this)'
+        required: true
+        type: string
+      mention:
+        description: 'Someone to @ mention in the issue body (include the @ sign)'
+        required: true
+        type: string
+    secrets:
+      access-token:
+        description: 'Access token that will be used to create the issue'
+        required: true
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-an-error-issue:
+    if: failure() && github.repository == 'ampproject/cdn-configuration'
+    name: Report an issue
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: JasonEtco/create-an-issue@v2
+        with:
+          filename: .github/WORKFLOW_ISSUE_TEMPLATE.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.access-token }}
+          WORKFLOW_NAME: ${{ runner.name }}
+          MENTION: ${{ inputs.mention }}
+          REPO_SLUG: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
