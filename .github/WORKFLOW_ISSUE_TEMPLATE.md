@@ -1,5 +1,5 @@
 ---
-title: 'Workflow failed: {{ env.WORKFLOW_NAME }}'
+title: Workflow {{ env.WORKFLOW_NAME }} failed
 ---
 
 The workflow `{{ env.WORKFLOW_NAME }}` failed. See logs:
