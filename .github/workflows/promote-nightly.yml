@@ -31,5 +31,3 @@ jobs:
     uses: danielrozenberg/cdn-configuration/.github/workflows/create-issue-on-error.yml@main
     with:
       mention: '@danielrozenberg'
-    secrets:
-      access-token: ${{ github.token }}

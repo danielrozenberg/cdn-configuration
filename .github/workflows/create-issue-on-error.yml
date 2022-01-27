@@ -7,10 +7,6 @@ on:
         description: 'Who should be @-mentioned in the issue body (include the @ sign)'
         required: true
         type: string
-    secrets:
-      access-token:
-        description: 'Access token that will be used to create the issue'
-        required: true
 
 permissions:
   contents: read
@@ -31,7 +27,7 @@ jobs:
         with:
           filename: .github/WORKFLOW_ISSUE_TEMPLATE.md
         env:
-          GITHUB_TOKEN: ${{ secrets.access-token }}
+          GITHUB_TOKEN: ${{ gitub.token }}
           WORKFLOW_NAME: ${{ runner.name }}
           MENTION: ${{ inputs.mention }}
           REPO_SLUG: ${{ github.repository }}
