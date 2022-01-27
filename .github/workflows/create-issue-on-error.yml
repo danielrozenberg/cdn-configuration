@@ -23,7 +23,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: JasonEtco/create-an-issue@v2
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: ⭐ Report an issue ⭐
+        uses: JasonEtco/create-an-issue@v2
         with:
           filename: .github/WORKFLOW_ISSUE_TEMPLATE.md
         env:
