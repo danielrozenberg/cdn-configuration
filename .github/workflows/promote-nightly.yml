@@ -17,17 +17,19 @@ on:
 
 jobs:
   promote-nightly:
-    uses: danielrozenberg/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
-    with:
-      channel-name: 'Nightly'
-      ts-file: 'promote-nightly.ts'
-      amp-version: ${{ github.event.inputs.amp-version }}
-      auto-merge: ${{ github.event.inputs.auto-merge }}
-    secrets:
-      access-token: ${{ secrets.ACCESS_TOKEN }}
-  create-issue-on-error:
-    uses: danielrozenberg/cdn-configuration/.github/workflows/create-issue-on-error.yml@main
-    with:
-      mention: '@danielrozenberg'
-    secrets:
-      access-token: ${{ github.token }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: danielrozenberg/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
+        with:
+          channel-name: 'Nightly'
+          ts-file: 'promote-nightly.ts'
+          amp-version: ${{ github.event.inputs.amp-version }}
+          auto-merge: ${{ github.event.inputs.auto-merge }}
+        secrets:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+      - uses: danielrozenberg/cdn-configuration/.github/workflows/create-issue-on-error.yml@main
+        with:
+          mention: '@danielrozenberg'
+        secrets:
+          access-token: ${{ github.token }}
