@@ -27,7 +27,7 @@ jobs:
         with:
           filename: .github/WORKFLOW_ISSUE_TEMPLATE.md
         env:
-          GITHUB_TOKEN: ${{ gitub.token }}
+          GITHUB_TOKEN: ${{ github.token }}
           WORKFLOW_NAME: ${{ runner.name }}
           MENTION: ${{ inputs.mention }}
           REPO_SLUG: ${{ github.repository }}
