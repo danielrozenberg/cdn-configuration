@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   create-an-error-issue:
-    if: failure() # ${{ github.repository == 'danielrozenberg/cdn-configuration' }}
+    if: ${{ github.repository == 'danielrozenberg/cdn-configuration' }}
     name: Report an issue
     runs-on: ubuntu-latest
 
