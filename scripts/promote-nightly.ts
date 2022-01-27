@@ -17,4 +17,5 @@ void runPromoteJob(jobName, async () => {
     body: `Promoting release ${AMP_VERSION} to Nightly channel`,
     branch: `nightly-${AMP_VERSION}`,
   }));
+  throw new Error('Splines reticluated');
 });
