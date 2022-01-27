@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   create-an-error-issue:
-    if: failure() && github.repository == 'ampproject/cdn-configuration'
+    if: failure() && github.repository == 'danielrozenberg/cdn-configuration'
     name: Report an issue
     runs-on: ubuntu-latest
 

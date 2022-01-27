@@ -12,7 +12,7 @@ on:
 
 jobs:
   sync:
-    if: github.repository == 'ampproject/cdn-configuration'
+    if: github.repository == 'danielrozenberg/cdn-configuration'
     name: client-side-experiments.json
     runs-on: ubuntu-latest
 

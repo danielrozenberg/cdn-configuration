@@ -2,13 +2,13 @@
 
 ## client-side-experiments.json
 
-This config is used to run client side diverted experiments, adding runtime support for deploying AMP experiment configuration updates faster via the CDN and cache pages. It is complimentary to `{canary,prod,custom}-config.json` and takes precedence over them. (See I2I issue: [#34013](https://github.com/ampproject/amphtml/issues/34013))
+This config is used to run client side diverted experiments, adding runtime support for deploying AMP experiment configuration updates faster via the CDN and cache pages. It is complimentary to `{canary,prod,custom}-config.json` and takes precedence over them. (See I2I issue: [#34013](https://github.com/danielrozenberg/amphtml/issues/34013))
 
 The JSON object must contain exactly one field `experiments` which is an array of experiment definition objects with the following fields:
 
 - `name`: experiment name
 - `percentage`: percentage of AMP page views that will activate this experiment (between 0 and 1)
-- `rtvPrefix`: (optional) array of RTV prefixes that will cause this experiment to be active, with period (`.`) acting as a wildcard. e.g., `["00", "0.2106"]` will cause this experiment to activate on the Experimental channel, and on every channel for the month of June, 2021 (see [Versioning section in amp-framework-hosting.md](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-framework-hosting.md#versioning) for an explanation of AMP versions and RTV numbers).
+- `rtvPrefix`: (optional) array of RTV prefixes that will cause this experiment to be active, with period (`.`) acting as a wildcard. e.g., `["00", "0.2106"]` will cause this experiment to activate on the Experimental channel, and on every channel for the month of June, 2021 (see [Versioning section in amp-framework-hosting.md](https://github.com/danielrozenberg/amphtml/blob/main/docs/spec/amp-framework-hosting.md#versioning) for an explanation of AMP versions and RTV numbers).
 
 Example:
 
@@ -32,6 +32,6 @@ Once merged onto the `main` branch, this file is automatically picked up by the 
 
 ## versions.json
 
-Defines the routing between channels and RTVs (see [Versioning section in amp-framework-hosting.md](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-framework-hosting.md#versioning) for an explanation of AMP versions and RTV numbers).
+Defines the routing between channels and RTVs (see [Versioning section in amp-framework-hosting.md](https://github.com/danielrozenberg/amphtml/blob/main/docs/spec/amp-framework-hosting.md#versioning) for an explanation of AMP versions and RTV numbers).
 
-Currently in testing in preparation for [#36152](https://github.com/ampproject/amphtml/issues/36152).
+Currently in testing in preparation for [#36152](https://github.com/danielrozenberg/amphtml/issues/36152).

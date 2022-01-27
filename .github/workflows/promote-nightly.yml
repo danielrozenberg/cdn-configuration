@@ -17,7 +17,7 @@ on:
 
 jobs:
   promote-nightly:
-    uses: ampproject/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
+    uses: danielrozenberg/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
     with:
       channel-name: 'Nightly'
       ts-file: 'promote-nightly.ts'
@@ -26,8 +26,8 @@ jobs:
     secrets:
       access-token: ${{ secrets.ACCESS_TOKEN }}
   create-issue-on-error:
-    uses: ampproject/cdn-configuration/.github/workflows/create-issue-on-error.yml
+    uses: danielrozenberg/cdn-configuration/.github/workflows/create-issue-on-error.yml
     with:
-      mention: '@ampproject/release-on-duty'
+      mention: '@danielrozenberg'
     secrets:
       access-token: ${{ github.token }}

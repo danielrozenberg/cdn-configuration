@@ -19,10 +19,10 @@ jobs:
     environment: cherry-pick
 
     steps:
-      - name: Checkout ampproject/amphtml
+      - name: Checkout danielrozenberg/amphtml
         uses: actions/checkout@v2
         with:
-          repository: ampproject/amphtml
+          repository: danielrozenberg/amphtml
           fetch-depth: 0
           token: ${{ secrets.AMPPROJECTBOT }}
 
@@ -59,4 +59,4 @@ jobs:
         run: |
           git checkout -b $CHERRY_PICK_BRANCH ${{ github.event.inputs.amp-version }}
           git cherry-pick -x ${{ github.event.inputs.shas }}
-          git push --set-upstream https://github.com/ampproject/amphtml.git $CHERRY_PICK_BRANCH
+          git push --set-upstream https://github.com/danielrozenberg/amphtml.git $CHERRY_PICK_BRANCH
