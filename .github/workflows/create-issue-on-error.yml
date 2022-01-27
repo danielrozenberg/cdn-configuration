@@ -3,12 +3,8 @@
 on:
   workflow_call:
     inputs:
-      title:
-        description: 'Title text of the issue ("Workflow failed:" will be prefixed to this)'
-        required: true
-        type: string
       mention:
-        description: 'Someone to @ mention in the issue body (include the @ sign)'
+        description: 'Who should be @-mentioned in the issue body (include the @ sign)'
         required: true
         type: string
     secrets:
