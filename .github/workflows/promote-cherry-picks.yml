@@ -18,7 +18,7 @@ on:
 
 jobs:
   promote-cherry-picks:
-    uses: ampproject/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
+    uses: danielrozenberg/cdn-configuration/.github/workflows/promote-reusable-workflow.yml@main
     with:
       channel-name: 'Cherry-pick'
       ts-file: 'promote-cherry-picks.ts'
@@ -30,6 +30,6 @@ jobs:
   create-issue-on-error:
     needs: promote-cherry-picks
     if: failure()
-    uses: ampproject/cdn-configuration/.github/workflows/create-issue-on-error.yml@main
+    uses: danielrozenberg/cdn-configuration/.github/workflows/create-issue-on-error.yml@main
     with:
-      mention: '@ampproject/release-on-duty'
+      mention: '@danielrozenberg'

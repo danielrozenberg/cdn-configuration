@@ -29,7 +29,7 @@ on:
 
 jobs:
   promote:
-    if: github.repository == 'ampproject/cdn-configuration'
+    if: github.repository == 'danielrozenberg/cdn-configuration'
     name: Promote ${{ inputs.channel-name }} Channel
     runs-on: ubuntu-latest
 
