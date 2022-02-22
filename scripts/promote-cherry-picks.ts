@@ -90,7 +90,7 @@ function generateBody(
     body += cherryPickedPRs
       .map(
         (pullNumber) =>
-          `\n* https://github.com/ampproject/amphtml/pull/${pullNumber}`
+          `\n* https:// github.com /ampproject/amphtml/pull/${pullNumber}`
       )
       .join(', ');
   }
