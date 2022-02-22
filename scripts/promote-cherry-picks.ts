@@ -112,7 +112,7 @@ void runPromoteJob(jobName, async () => {
 
     const cherryPickedPRs = await getCherryPickedPRs(
       ampVersion,
-      Number(currentCherryPicksCount) - Number(cherryPicksCount)
+      Number(cherryPicksCount) - Number(currentCherryPicksCount)
     );
 
     return {
