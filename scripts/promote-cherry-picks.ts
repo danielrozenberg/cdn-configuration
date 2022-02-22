@@ -66,10 +66,11 @@ async function getCherryPickedPRs(
       per_page: numberOfCherryPickedCommits,
     });
     return data
-      .map(
-        ({commit}) =>
-          commit.message.match(/\(#(?<pullNumber>\d+)\)$/)?.groups?.pullNumber
-      )
+      .map(({commit}) => {
+        const [firstLine] = commit.message.split('\n');
+        const matches = firstLine?.match(/\(#(?<pullNumber>\d+)\)$/);
+        return matches?.groups?.pullNumber;
+      })
       .filter(defined);
   } catch (err) {
     console.warn('Could not fetch the list of cherry picked PRs, skipping...');
